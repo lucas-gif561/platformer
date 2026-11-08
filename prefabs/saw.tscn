@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dhwwvywdtifs"]
+
+[ext_resource type="Script" uid="uid://dlsvrff2c66y6" path="res://scripts/saw.gd" id="1_quier"]
+[ext_resource type="Texture2D" uid="uid://pbpmupujlql5" path="res://sprites/Traps/Saw/On (38x38).png" id="2_n2r0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nossa"]
+atlas = ExtResource("2_n2r0n")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjqri"]
+atlas = ExtResource("2_n2r0n")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg84p"]
+atlas = ExtResource("2_n2r0n")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aans"]
+atlas = ExtResource("2_n2r0n")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0ron"]
+atlas = ExtResource("2_n2r0n")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdlki"]
+atlas = ExtResource("2_n2r0n")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8pws"]
+atlas = ExtResource("2_n2r0n")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rscm6"]
+atlas = ExtResource("2_n2r0n")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2l1qj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nossa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjqri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg84p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aans")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0ron")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdlki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8pws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rscm6")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s21eq"]
+radius = 18.0
+
+[node name="Saw" type="Area2D" unique_id=1318690747]
+script = ExtResource("1_quier")
+move_dir = 3
+speed = 200.0
+distance = 320.0
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=196796143]
+sprite_frames = SubResource("SpriteFrames_2l1qj")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.1571874
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557192972]
+shape = SubResource("CircleShape2D_s21eq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
