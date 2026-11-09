@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b7v1ctry8scn4"]
+
+[ext_resource type="Texture2D" uid="uid://b77m5js0nep53" path="res://sprites/Background/Purple.png" id="bg"]
+[ext_resource type="FontFile" uid="uid://d0joq6v8gvy31" path="res://fonts/Pixeled.ttf" id="font"]
+[ext_resource type="Script" uid="uid://mxr5q6jirjtq" path="res://scripts/victory.gd" id="script"]
+
+[node name="Victory" type="Control" unique_id=391604960]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=17529307]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("bg")
+stretch_mode = 1
+
+[node name="Title" type="Label" parent="." unique_id=1869066625]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 34.0
+offset_bottom = 74.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 16
+text = "FIM DE JOGO!"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="." unique_id=1000181784]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 82.0
+offset_bottom = 112.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 10
+text = "PONTOS: 0"
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="." unique_id=1883084724]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 124.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 6
+text = "ENTER: JOGAR DE NOVO"
+horizontal_alignment = 1
